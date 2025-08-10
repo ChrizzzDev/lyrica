@@ -1,0 +1,35 @@
+{
+  "name": "Echoica",
+  "short_name": "Echoica",
+  "description": "Create stunning lyric posters from your favorite songs and albums. Personalize, visualize, and share your music art with Echoica.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#fafafa",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["music", "art", "lyrics", "poster", "generator"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 64x64 128x128 256x256 512x512",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "echoica.vercel.app",
+  "prefer_related_applications": false
+}
