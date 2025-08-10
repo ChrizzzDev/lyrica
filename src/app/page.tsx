@@ -23,6 +23,13 @@ const THEMES = ['Light', 'Dark', 'Catppuccin', 'Gruvbox', 'Nord', 'RosePine', 'E
 type Options = 'Light' | 'Dark' | 'Catppuccin' | 'Gruvbox' | 'Nord' | 'RosePine' | 'Everforest';
 
 export default function Home() {
+  const [baseUrl, setBaseUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const base = window.location.origin;
+    setBaseUrl(base);
+  }, [])
+
   const [name, setName] = useState('');
   const [artist, setArtist] = useState('');
   const [spotifyId, setSpotifyId] = useState('');
@@ -66,7 +73,7 @@ export default function Home() {
   const [history, setHistory] = useState<PosterHistoryItem[]>([]);
   const [showHistory, setShowHistory] = useState(false);
 
-  const $fetch = fetcher('http://localhost:3000');
+  const $fetch = fetcher(baseUrl!);
 
   useEffect(() => {
     const saved = localStorage.getItem('posterHistory');
@@ -365,7 +372,7 @@ export default function Home() {
           className="text-5xl sm:text-7xl uppercase text-center tracking-tight outer-glow animate-pulse-slow drop-shadow-xl"
           style={{ fontFamily: 'var(--font-monoton)' }}
         >
-          Sonora
+          Echoica
         </h1>
         {/* <p className="mt-2 text-lg text-muted-foreground font-medium">Fuck ZickTron</p> */}
         <Tooltip>
